@@ -3,27 +3,10 @@ const http = require('http')
 // set-up to create web server capable of accepting requests and sending back responses; http gives networking capabilities
 const url = require('url')
 // able to analyze for routing
-
-
-// FILES
-
+const replaceTemplate = require('./modules/replaceTemplate.js')
 
 
 // SERVER
-const replaceTemplate = (temp, product) => {
-    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName)
-    // /.../g replaces all global instances of ...
-    output = output.replace (/{%IMAGE%}/g, product.image)
-    output = output.replace (/{%PRICE%}/g, product.price)
-    output = output.replace (/{%NUTRIENTS%}/g, product.nutrients)
-    output = output.replace (/{%QUANTITY%}/g, product.quantity)
-    output = output.replace (/{%DESCRIPTION%}/g, product.description)
-    output = output.replace (/{%ID%}/g, product.id)
-
-    if (!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic')
-
-    return output
-}
 
 const tempOverview = fs.readFileSync(`${__dirname}/starter/templates/template-overview.html`, 'utf-8')
 const tempCard = fs.readFileSync(`${__dirname}/starter/templates/template-card.html`, 'utf-8')
