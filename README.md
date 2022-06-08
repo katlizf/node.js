@@ -11,7 +11,11 @@ Course video on [Udemy](https://specs.udemy.com/course/nodejs-express-mongodb-bo
 # Notes
 
 * Node.js is a JS runtime; it's like an environment in which a program written in JS can be executed, but outside of any browser whatsoever
-    * Single threaded
+    * Single threaded, **Don't block!**
+        * Don't use sync versions of functions
+        * Don't perform complex calculations (ex. loops inside loops)
+        * Be careful with JSON in large objects
+        * Don't use too complex regular expressions (ex. nested qualifiers)
     * Based on event-friven, non-blocking I/O model
     * Not good for heavy server-side processing (better to use PHP, Python, or Ruby on Rails for this)
 * Can use in terminal by running "node" enter
