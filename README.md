@@ -29,3 +29,4 @@ Course video on [Udemy](https://specs.udemy.com/course/nodejs-express-mongodb-bo
 * Asynchronous: heavy-work in worked on in the background and then, once that work is done, a callback function that is registered before is called to handle the result
     * The rest of the code can still be executing without being blocked by the heavy task running in the background
     * fs.readFileSync vs. fs.readFile# node.js
+* Streams: used to process (read and write) data piece by piece (chunks) without completing the whole read and write operation, and therefore without keeping all the data in memory
