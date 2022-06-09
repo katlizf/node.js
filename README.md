@@ -30,3 +30,13 @@ Course video on [Udemy](https://specs.udemy.com/course/nodejs-express-mongodb-bo
     * The rest of the code can still be executing without being blocked by the heavy task running in the background
     * fs.readFileSync vs. fs.readFile# node.js
 * Streams: used to process (read and write) data piece by piece (chunks) without completing the whole read and write operation, and therefore without keeping all the data in memory
+* API (application programming interface): a piece of software that can be used by another piece of software in order to allow applications to talk to each other
+    * REST (representational state transfer): a way of building web APIs that is easy to consume
+        * Separate API into logical resources
+        * Expose structured, resousrce-based URLs (endpoints should contain resources like /tours/7 not actions like /addNewTour)
+        * Use HTTP methods (verbs)
+        * Send data as JSON (usually)
+        * Be stateless: all state is handled on the client and not the server
+            * Each request must contain all the info necessary to process a certain request; server should not have to remember previous requests (ex. not saving state of wether a user is logged in, or what the current page is)
+* CRUD (create, read, update, delete)
+    * API should respond to requests like post, get, put, patch, and delete
