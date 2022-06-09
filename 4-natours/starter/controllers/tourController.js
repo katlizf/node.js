@@ -6,11 +6,21 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/../dev-data/data/tours-si
 // MIDDLEWARE (check for id setup so don't have to do in every route handler that uses id as a param)
 exports.checkId = (req, res, next, val) => {
     if (req.params.id*1 > tours.length) {
-        return res.status(404).json({
+        return res.status(400).json({
             status: 'fail',
             message: 'Invalid ID'
         })
     }
+    next()
+}
+
+exports.checkBody = (req, res, next) => {
+    if (!req.body.name || !req.body.price) {
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Missing name or price'
+            })
+        }
     next()
 }
 
