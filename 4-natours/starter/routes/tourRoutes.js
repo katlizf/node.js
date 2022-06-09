@@ -3,6 +3,9 @@ const router = express.Router()
 const tourController = require('./../controllers/tourController')
 
 
+// MIDDLEWARE
+router.param('id', tourController.checkId)
+
 // ROUTES, refactored way of coding the above routes
 router.route('/')
     .get(tourController.getAllTours)
