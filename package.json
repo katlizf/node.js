@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/katlizf/node.js#readme",
   "dependencies": {
+    "morgan": "^1.10.0",
     "slugify": "^1.6.5"
   },
   "devDependencies": {
